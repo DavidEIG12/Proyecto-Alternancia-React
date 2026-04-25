@@ -2,11 +2,96 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-page: radial-gradient(circle at top left, #d9f0ff, #f4fbff 45%, #edf3f8);
+  --text-main: #14263a;
+
+  --surface: #ffffff;
+  --surface-soft: #f8fbff;
+  --surface-soft-2: #e8f0f6;
+  --surface-soft-3: #dbe8f2;
+
+  --border: #d9e3f0;
+  --border-strong: #c9d8ea;
+
+  --heading: #16324a;
+  --text-muted: #3a4f63;
+  --text-label: #21425f;
+
+  --primary: #124559;
+  --primary-hover: #0e3646;
+  --primary-contrast: #ffffff;
+  --disabled: #8ca6bb;
+
+  --focus: #0f5d85;
+  --focus-shadow: rgba(15, 93, 133, 0.15);
+
+  --success: #2d9d62;
+  --success-bg: #f3fff8;
+  --error: #c0392b;
+  --error-text: #b73225;
+  --error-bg: #fff7f6;
+
+  --featured: #f0a130;
+  --featured-shadow: rgba(240, 161, 48, 0.2);
+
+  --topbar-grad-start: #124559;
+  --topbar-grad-end: #598392;
+  --topbar-text: #f7fbff;
+  --nav-link: #eaf6ff;
+  --nav-link-hover-border: rgba(255, 255, 255, 0.45);
+
+  --shadow-lg: 0 16px 40px rgba(10, 31, 68, 0.08);
+}
+
+[data-theme='dark'] {
+  --bg-page: radial-gradient(circle at top left, #0d1825, #15273a 48%, #1f3347);
+  --text-main: #e6edf5;
+
+  --surface: #162433;
+  --surface-soft: #1a2b3c;
+  --surface-soft-2: #20384d;
+  --surface-soft-3: #2a465e;
+
+  --border: #2f4a62;
+  --border-strong: #3a5a74;
+
+  --heading: #e6edf5;
+  --text-muted: #c7d7e6;
+  --text-label: #d2e0ec;
+
+  --primary: #77b5d9;
+  --primary-hover: #5ca5cf;
+  --primary-contrast: #0d1b2a;
+  --disabled: #6f8ea6;
+
+  --focus: #8ac7ea;
+  --focus-shadow: rgba(138, 199, 234, 0.2);
+
+  --success: #79d59f;
+  --success-bg: #163328;
+  --error: #f08c82;
+  --error-text: #ffb3ac;
+  --error-bg: #3b1f22;
+
+  --featured: #f3bd63;
+  --featured-shadow: rgba(243, 189, 99, 0.25);
+
+  --topbar-grad-start: #10283f;
+  --topbar-grad-end: #234966;
+  --topbar-text: #edf5fc;
+  --nav-link: #e5f1ff;
+  --nav-link-hover-border: rgba(255, 255, 255, 0.35);
+
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
 body {
   margin: 0;
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top left, #d9f0ff, #f4fbff 45%, #edf3f8);
-  color: #14263a;
+  background: var(--bg-page);
+  color: var(--text-main);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 #root {

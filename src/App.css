@@ -2,11 +2,12 @@
   min-height: 100dvh;
   width: min(980px, 100% - 2rem);
   margin: 2rem auto;
-  background: #fff;
-  border: 1px solid #e1e7ef;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(10, 31, 68, 0.08);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 .topbar {
@@ -16,13 +17,28 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 1.5rem;
-  background: linear-gradient(120deg, #124559, #598392);
-  color: #f7fbff;
+  background: linear-gradient(120deg, var(--topbar-grad-start), var(--topbar-grad-end));
+  color: var(--topbar-text);
 }
 
 .topbar h1 {
   margin: 0;
   font-size: 1.25rem;
+}
+
+.theme-toggle {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--topbar-text);
+  background: transparent;
+}
+
+.theme-toggle:hover {
+  border-color: var(--nav-link-hover-border);
 }
 
 .topbar nav {
@@ -32,7 +48,7 @@
 
 .topbar nav a {
   text-decoration: none;
-  color: #eaf6ff;
+  color: var(--nav-link);
   padding: 0.45rem 0.8rem;
   border: 1px solid transparent;
   border-radius: 999px;
@@ -40,12 +56,12 @@
 }
 
 .topbar nav a:hover {
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: var(--nav-link-hover-border);
 }
 
 .topbar nav a.is-active {
-  background: #ffffff;
-  color: #124559;
+  background: var(--surface);
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -55,11 +71,11 @@
 
 .page h2 {
   margin-top: 0;
-  color: #183b4e;
+  color: var(--heading);
 }
 
 .page p {
-  color: #3a4f63;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -76,10 +92,10 @@
 }
 
 .gallery-main {
-  border: 1px solid #d9e3f0;
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.7rem;
-  background: #f8fbff;
+  background: var(--surface-soft);
 }
 
 .main-image {
@@ -92,7 +108,7 @@
 
 .gallery-main h4 {
   margin: 0.8rem 0 0.35rem;
-  color: #16324a;
+  color: var(--heading);
 }
 
 .gallery-main p {
@@ -128,8 +144,8 @@
 }
 
 .thumb.is-selected {
-  border-color: #0f5d85;
-  box-shadow: 0 0 0 2px rgba(15, 93, 133, 0.15);
+  border-color: var(--focus);
+  box-shadow: 0 0 0 2px var(--focus-shadow);
 }
 
 .fade-in {
@@ -149,16 +165,16 @@
 
 .card,
 .post {
-  border: 1px solid #d9e3f0;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.9rem;
-  background: #f8fbff;
+  background: var(--surface-soft);
 }
 
 .card h4,
 .post h4 {
   margin: 0 0 0.4rem;
-  color: #16324a;
+  color: var(--heading);
 }
 
 .post-creator {
@@ -166,24 +182,26 @@
   gap: 0.5rem;
   margin-bottom: 0.9rem;
   padding: 0.8rem;
-  border: 1px solid #d9e3f0;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background: #f8fbff;
+  background: var(--surface-soft);
 }
 
 .post-creator label {
   font-weight: 600;
-  color: #21425f;
+  color: var(--text-label);
 }
 
 .post-creator input,
 .post-creator textarea,
 .post-edit-form input,
 .post-edit-form textarea {
-  border: 1px solid #c9d8ea;
+  border: 1px solid var(--border-strong);
   border-radius: 10px;
   padding: 0.65rem 0.75rem;
   font: inherit;
+  background: var(--surface);
+  color: var(--text-main);
 }
 
 .post-creator input:focus,
@@ -191,13 +209,13 @@
 .post-edit-form input:focus,
 .post-edit-form textarea:focus {
   outline: none;
-  border-color: #0f5d85;
-  box-shadow: 0 0 0 3px rgba(15, 93, 133, 0.15);
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px var(--focus-shadow);
 }
 
 .post.is-featured {
-  border-color: #f0a130;
-  box-shadow: 0 0 0 2px rgba(240, 161, 48, 0.2);
+  border-color: var(--featured);
+  box-shadow: 0 0 0 2px var(--featured-shadow);
 }
 
 .post-actions {
@@ -223,26 +241,26 @@
 }
 
 .btn-primary {
-  background: #124559;
-  color: #fff;
+  background: var(--primary);
+  color: var(--primary-contrast);
 }
 
 .btn-primary:hover:enabled {
-  background: #0e3646;
+  background: var(--primary-hover);
 }
 
 .btn-primary:disabled {
-  background: #8ca6bb;
+  background: var(--disabled);
   cursor: not-allowed;
 }
 
 .btn-soft {
-  background: #e8f0f6;
-  color: #21425f;
+  background: var(--surface-soft-2);
+  color: var(--text-label);
 }
 
 .btn-soft:hover {
-  background: #dbe8f2;
+  background: var(--surface-soft-3);
 }
 
 .contact-form {
@@ -254,37 +272,39 @@
 
 .contact-form label {
   font-weight: 600;
-  color: #21425f;
+  color: var(--text-label);
 }
 
 .contact-form input,
 .contact-form textarea {
-  border: 1px solid #c9d8ea;
+  border: 1px solid var(--border-strong);
   border-radius: 10px;
   padding: 0.7rem 0.8rem;
   font: inherit;
+  background: var(--surface);
+  color: var(--text-main);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #0f5d85;
-  box-shadow: 0 0 0 3px rgba(15, 93, 133, 0.15);
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px var(--focus-shadow);
 }
 
 .contact-form .is-valid {
-  border-color: #2d9d62;
-  background: #f3fff8;
+  border-color: var(--success);
+  background: var(--success-bg);
 }
 
 .contact-form .is-invalid {
-  border-color: #c0392b;
-  background: #fff7f6;
+  border-color: var(--error);
+  background: var(--error-bg);
 }
 
 .field-error {
-  color: #b73225;
+  color: var(--error-text);
   font-size: 0.85rem;
   margin-bottom: 0.35rem;
 }
@@ -294,24 +314,24 @@
   border: none;
   border-radius: 999px;
   padding: 0.65rem 1.2rem;
-  background: #124559;
-  color: #fff;
+  background: var(--primary);
+  color: var(--primary-contrast);
   font-weight: 600;
   cursor: pointer;
 }
 
 .contact-form button:hover:enabled {
-  background: #0e3646;
+  background: var(--primary-hover);
 }
 
 .contact-form button:disabled {
-  background: #8ca6bb;
+  background: var(--disabled);
   cursor: not-allowed;
 }
 
 .form-success {
   margin-top: 0.9rem;
-  color: #1a7a49;
+  color: var(--success);
   font-weight: 600;
 }
 
