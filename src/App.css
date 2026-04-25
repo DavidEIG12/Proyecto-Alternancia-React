@@ -161,6 +161,90 @@
   color: #16324a;
 }
 
+.post-creator {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+  padding: 0.8rem;
+  border: 1px solid #d9e3f0;
+  border-radius: 12px;
+  background: #f8fbff;
+}
+
+.post-creator label {
+  font-weight: 600;
+  color: #21425f;
+}
+
+.post-creator input,
+.post-creator textarea,
+.post-edit-form input,
+.post-edit-form textarea {
+  border: 1px solid #c9d8ea;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+.post-creator input:focus,
+.post-creator textarea:focus,
+.post-edit-form input:focus,
+.post-edit-form textarea:focus {
+  outline: none;
+  border-color: #0f5d85;
+  box-shadow: 0 0 0 3px rgba(15, 93, 133, 0.15);
+}
+
+.post.is-featured {
+  border-color: #f0a130;
+  box-shadow: 0 0 0 2px rgba(240, 161, 48, 0.2);
+}
+
+.post-actions {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.post-edit-form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.btn-primary,
+.btn-soft {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #124559;
+  color: #fff;
+}
+
+.btn-primary:hover:enabled {
+  background: #0e3646;
+}
+
+.btn-primary:disabled {
+  background: #8ca6bb;
+  cursor: not-allowed;
+}
+
+.btn-soft {
+  background: #e8f0f6;
+  color: #21425f;
+}
+
+.btn-soft:hover {
+  background: #dbe8f2;
+}
+
 .contact-form {
   margin-top: 1rem;
   display: grid;
