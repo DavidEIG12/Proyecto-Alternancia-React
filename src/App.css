@@ -1,20 +1,142 @@
-.base-shell {
+.app-shell {
   min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  text-align: center;
-  padding: 1.25rem;
+  width: min(980px, 100% - 2rem);
+  margin: 2rem auto;
+  background: #fff;
+  border: 1px solid #e1e7ef;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(10, 31, 68, 0.08);
+  overflow: hidden;
 }
 
-.base-shell h1 {
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(120deg, #124559, #598392);
+  color: #f7fbff;
+}
+
+.topbar h1 {
   margin: 0;
+  font-size: 1.25rem;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.topbar nav a {
+  text-decoration: none;
+  color: #eaf6ff;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: 0.2s ease;
+}
+
+.topbar nav a:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.topbar nav a.is-active {
+  background: #ffffff;
+  color: #124559;
+  font-weight: 600;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.page h2 {
+  margin-top: 0;
+  color: #183b4e;
+}
+
+.page p {
+  color: #3a4f63;
+  line-height: 1.6;
+}
+
+.grid-layout {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 1rem;
+}
+
+.gallery,
+.blog-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.card,
+.post {
+  border: 1px solid #d9e3f0;
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: #f8fbff;
+}
+
+.card h4,
+.post h4 {
+  margin: 0 0 0.4rem;
   color: #16324a;
 }
 
-.base-shell p {
-  margin: 0;
-  color: #3a4f63;
+.contact-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.65rem;
+  max-width: 560px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #21425f;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #c9d8ea;
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+}
+
+.contact-form button {
+  width: fit-content;
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.2rem;
+  background: #124559;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #0e3646;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    margin: 1rem auto;
+    width: calc(100% - 1rem);
+  }
+
+  .topbar {
+    padding: 1rem;
+  }
+
+  .topbar nav {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
