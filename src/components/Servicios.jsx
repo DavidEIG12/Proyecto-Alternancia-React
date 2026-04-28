@@ -116,9 +116,21 @@ function Servicios() {
     title: '',
     description: '',
   })
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalImage, setModalImage] = useState(null)
 
   // Se obtiene la imagen activa para renderizar una vista principal y su descripcion.
   const selectedImage = galleryItems.find((item) => item.id === selectedImageId)
+
+  function handleOpenModal() {
+    setModalImage(selectedImage)
+    setIsModalOpen(true)
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false)
+    setModalImage(null)
+  }
 
   function handlePostChange(event) {
     const { name, value } = event.target
@@ -185,7 +197,15 @@ function Servicios() {
           {/* Renderizado condicional de la imagen principal segun la miniatura seleccionada. */}
           {selectedImage && (
             <div className="gallery-main fade-in" key={selectedImage.id}>
-              <img src={selectedImage.src} alt={selectedImage.alt} className="main-image" />
+              <img 
+                src={selectedImage.src} 
+                alt={selectedImage.alt} 
+                className="main-image"
+                onClick={handleOpenModal}
+                role="button"
+                tabIndex="0"
+                onKeyPress={(e) => e.key === 'Enter' && handleOpenModal()}
+              />
               <h4>{selectedImage.title}</h4>
               <p>{selectedImage.description}</p>
             </div>
@@ -254,6 +274,25 @@ function Servicios() {
           </div>
         </article>
       </div>
+
+      {/* Modal para visualizar la imagen en grande */}
+      {isModalOpen && modalImage && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="modal-close"
+              onClick={handleCloseModal}
+              aria-label="Cerrar modal"
+            >
+              ✕
+            </button>
+            <img src={modalImage.src} alt={modalImage.alt} className="modal-image" />
+            <h3>{modalImage.title}</h3>
+            <p>{modalImage.description}</p>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
